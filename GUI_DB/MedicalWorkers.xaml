@@ -1,0 +1,95 @@
+﻿<Window x:Class="GUI_DB.MedicalWorkers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_DB"
+        mc:Ignorable="d"
+        Title="MedicalWorkers" Height="400" Width="755" Background="PowderBlue">
+    <Grid>
+        <TabControl Background="PowderBlue" >
+            <!--There are three Items -ALL- NEW- -OPTION-->
+            <TabItem Header="All" Width="55" Foreground="Green">
+                <Grid Margin="9,0,-3,-3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="661*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <DataGrid x:Name="dataGridMW" Margin="0,61,4,10" AutoGenerateColumns="true" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                    </DataGrid>
+
+                    <Label Content="Show:" Foreground="Green" Margin="0,5,2,303" FontStyle="Italic" FontWeight="Bold" FontSize="14" Grid.Row="1"/>
+                    <RadioButton x:Name="allMWRB" Content="All" GroupName="showAllMW" Foreground="Green" HorizontalAlignment="Left" Height="22" Margin="3,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="54" Checked="ShowAllMW" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <RadioButton x:Name="allNurseRB" Content="Nurses" GroupName="ShowNurses" Foreground="Green" HorizontalAlignment="Left" Height="22" Margin="67,10,0,0"  Grid.RowSpan="2" VerticalAlignment="Top" Width="64" Checked="ShowNurses" Grid.Column="2" />
+                    <RadioButton Name="DoctorRB" Content="Doctors" Grid.Column="2" GroupName="ShowDoctors" Foreground="Green" HorizontalAlignment="Left" Margin="147,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Checked="ShowDoctors"/>
+                    <!--<Label Name="selectIdNurse" Content="select Id Nurse:" FontStyle="Italic" FontWeight="Bold" FontSize="14"  Foreground="Green" Margin="267,7,286,312" Grid.RowSpan="2" Grid.Column="1" RenderTransformOrigin="0.44,-0.411"/>
+                    <ComboBox x:Name="selectIdD" Margin="394,7,72,303" Grid.RowSpan="2" Grid.Column="1" SelectionChanged="selectIdN_SelectionChanged"/>
+                    <ComboBox x:Name="selectdate " Margin="394,50,72,260" Grid.RowSpan="2" Grid.Column="1" SelectionChanged="selectIdN_SelectionChanged"/>-->
+                </Grid>
+            </TabItem>
+            <TabItem Header="Doctors" Width="55" Foreground="Green">
+                <Grid Margin="9,0,-3,-3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="64*"/>
+                        <ColumnDefinition Width="661*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <DataGrid x:Name="dataGridMW2" Margin="78,46,0,230" AutoGenerateColumns="true" Grid.RowSpan="2" HorizontalAlignment="Left" Width="146" Grid.Column="2"/>
+                    <DataGrid x:Name="dataGridMW3" Margin="411,46,0,230" AutoGenerateColumns="true" Grid.RowSpan="2" HorizontalAlignment="Left" Width="146" Grid.Column="2"/>
+
+                    <Label Content="Show AVG Salary:" Foreground="Green" Margin="0,5,603,303" FontStyle="Italic" FontWeight="Bold" FontSize="14" Grid.Row="1" Grid.ColumnSpan="3"/>
+                    <Label Content="Check if MoreThen Avg num Of Work Year:" Foreground="Green" Margin="0,175,424,133" FontStyle="Italic" FontWeight="Bold" FontSize="14" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <RadioButton x:Name="AvgDRB" Content=" Doctors " GroupName="showAvgD" Foreground="Green" HorizontalAlignment="Left" Height="31" Margin="78,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="71" Checked="ShowAVGD" Grid.Column="2"/>
+                    <RadioButton x:Name="AVGNRB" Content="Nurses" GroupName="AVGN" Foreground="Green" HorizontalAlignment="Left" Height="22" Margin="166,10,0,0"  Grid.RowSpan="2" VerticalAlignment="Top" Width="71" Checked="ShowAVGN" Grid.Column="2" RenderTransformOrigin="0.63,0.545" />
+                    <Label Content="Show SUM Salary:" Foreground="Green" Margin="263,5,266,303" FontStyle="Italic" FontWeight="Bold" FontSize="14" Grid.Row="1" Grid.Column="2"/>
+                    <RadioButton Name="SUMDRB" Content="Doctors" Grid.Column="2" HorizontalAlignment="Left" Foreground="Green" Margin="411,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Checked="ShowSUMDD" Height="31"/>
+                    <RadioButton Name="SUMNRB" Content="Nurses" Foreground="Green" Margin="489,10,104,302" Grid.RowSpan="2" Grid.Column="2" Checked="ShowSUMDN"/>
+                    <Button Name="UpdateSallary" Content="Check" Background="PowderBlue" Foreground="Green" Margin="263,175,307,133" Grid.Column="2" Grid.RowSpan="2" RenderTransformOrigin="0.213,0.806" Click="UpdateSallary_Click"/>
+                    <!--<RadioButton x:Name="SUMDRB" Content=" Doctors " GroupName="showSumD" Foreground="Green" HorizontalAlignment="Left" Height="31" Margin="411,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="71" Checked="ShowSUMDD" Grid.Column="2"/>
+                    <RadioButton x:Name="SUMNRB" Content="Nurse" GroupName="showSumN" Foreground="Green" HorizontalAlignment="Left" Height="22" Margin="507,10,0,0"  Grid.RowSpan="2" VerticalAlignment="Top" Width="71" Checked="ShowSUMDN" Grid.Column="2" RenderTransformOrigin="2.465,1.136" />
+                    <RadioButton x:Name="DepRB" Content="Department" GroupName="ShowDep" Foreground="Green" HorizontalAlignment="Left" Height="22" Margin="146.465,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="90" Checked="ShowDep" Grid.Column="1"/>
+                    <ComboBox x:Name="selectIdN" Margin="394,7,72,303" Grid.RowSpan="2" Grid.Column="1" SelectionChanged="selectIdN_SelectionChanged"/>
+                    <Label Name="selectIdNurse" Content="select Id Nurse:" FontStyle="Italic" FontWeight="Bold" FontSize="14"  Foreground="Green" Margin="267,0,286,298" Grid.RowSpan="2" Grid.Column="1" RenderTransformOrigin="0.44,-0.411"/>-->
+                </Grid>
+            </TabItem>
+            <TabItem Header="Nurses" Width="55" Foreground="Green">
+                <Grid Margin="9,0,-3,-3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="661*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <DataGrid x:Name="dataGridN" Margin="0,98,4,10" AutoGenerateColumns="true" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                    </DataGrid>
+
+                    <Label Content="Show Nurses In Department:" Foreground="Green" Margin="0,5,534,303" FontStyle="Italic" FontWeight="Bold" FontSize="14" Grid.Row="1" Grid.ColumnSpan="3"/>
+                    <!--<RadioButton x:Name="allMWRB" Content="All" GroupName="showAllMW" Foreground="Green" HorizontalAlignment="Left" Height="22" Margin="3,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="54" Checked="ShowAllMW" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <RadioButton x:Name="allNurseRB" Content="Nurses" GroupName="ShowNurses" Foreground="Green" HorizontalAlignment="Left" Height="22" Margin="67,10,0,0"  Grid.RowSpan="2" VerticalAlignment="Top" Width="64" Checked="ShowNurses" Grid.Column="2" />
+                    <RadioButton Name="DoctorRB" Content="Doctors" Grid.Column="2"  FontStyle="Italic" FontWeight="Bold" GroupName="ShowDoctors" Foreground="Green" HorizontalAlignment="Left" Margin="147,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Checked="ShowDoctors"/>>-->
+                    <Label Name="select1Dep" Content="select Department 1:"   FontStyle="Italic"  FontSize="14"  Foreground="Green" Margin="183,7,326,302" Grid.RowSpan="2" Grid.Column="2" RenderTransformOrigin="0.44,-0.411"/>
+                    <Label Name="select2Dep" Content="select Department 2:"   FontStyle="Italic"  FontSize="14"  Foreground="Green" Margin="183,50,326,260" Grid.RowSpan="2" Grid.Column="2" RenderTransformOrigin="0.44,-0.411"/>
+                    <ComboBox x:Name="Dep1List" Margin="357,8,145,302" Grid.RowSpan="2" Grid.Column="2" SelectionChanged="Dep1_SelectionChanged" RenderTransformOrigin="0.5,0.5"/>
+                    <ComboBox x:Name="Dep2List" Margin="357,50,145,260" Grid.RowSpan="2" Grid.Column="2" SelectionChanged="Dep2_SelectionChanged"/>
+                    <Button x:Name="AndButton" Content="AND" Background="PowderBlue" Margin="555,10,47,303" Foreground="Green" Grid.RowSpan="2" Grid.Column="2" RenderTransformOrigin="6.273,0.34" Click="AndButton_Click"/>
+                    <Button x:Name="OrButton" Content="OR" Background="PowderBlue" Margin="555,50,47,260" Foreground="Green" Grid.RowSpan="2" Grid.Column="2" RenderTransformOrigin="0.492,0.816" Click="OrButton_Click"/>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>

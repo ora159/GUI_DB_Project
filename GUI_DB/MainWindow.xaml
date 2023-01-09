@@ -1,0 +1,34 @@
+﻿<Window x:Class="GUI_DB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_DB"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="755" Background="PowderBlue">
+
+    <Grid>
+        <Image Height="283" VerticalAlignment="Top" Source="image\myPicter.jpg" Margin="24,35,24,0"/>
+        <Menu HorizontalAlignment="Left" Height="21" Margin="2,0,0,0" VerticalAlignment="Top" Width="56" Background="PowderBlue">
+            <MenuItem Header="Cliet" Width="53" Background="PowderBlue" Foreground="Green" Click="Client" Height="21"/>
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="21" Margin="58,0,0,0" VerticalAlignment="Top" Width="80" Background="PowderBlue">
+            <MenuItem Header="Appointment" Width="80" Background="PowderBlue" Foreground="Green" Click="Appointment"/>
+        </Menu>
+
+        <Menu HorizontalAlignment="Left" Height="21" Margin="167,0,0,0" VerticalAlignment="Top" Width="120" Background="PowderBlue">
+            <MenuItem Header="The Medical Workers" Width="120" Background="PowderBlue" Foreground="Green" Click="AllWorkers"/>
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="21" Margin="300,0,0,0" VerticalAlignment="Top" Width="60" Background="PowderBlue">
+            <MenuItem Header="WorkIn" Width="66" Background="PowderBlue" Foreground="Green" Click="WorkIn"/>
+        </Menu>
+
+
+    </Grid>
+
+
+
+    <!---<Button Click="client_Click" Content="client" Height="34" HorizontalAlignment="Center"  Margin="187,93,0,0" Name="client" VerticalAlignment="Top" Width="165" Grid.ColumnSpan="3"  Foreground="Green" Background="Beige"/>
+        <Button Click="EXIT_Click" Content="EXIT" Height="24" HorizontalAlignment="Left" Margin="183,301,0,0" Name="EXIT" VerticalAlignment="Top" Width="165"  Grid.ColumnSpan="3" />
+-->
+</Window>
